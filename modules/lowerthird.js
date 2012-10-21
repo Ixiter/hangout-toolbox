@@ -136,6 +136,10 @@ LowerThird.prototype.buildDOM = function(){
 	var radio_left_text		= label.clone().attr({"for": "name"}).text("Left");
 	var radio_right			= this.createElement("input", {"type": "radio", "name":"clock", "id":"radio-button-right"});
 	var radio_right_text	= label.clone().attr({"for": "name"}).text("Right");
+	var radio_hours24		= this.createElement("input", {"type": "radio", "id":"radio-hours-24", "name":"clock_hours", "checked":"checked"});
+	var radio_hours24_text		= label.clone().attr({"for": "name"}).text("24 hours");
+	var radio_hours24		= this.createElement("input", {"type": "radio", "id":"radio-hours-12", "name":"clock_hours"});
+	var radio_hours24_text		= label.clone().attr({"for": "name"}).text("12 hours");
 
 	var nopresets			= span.clone().text("No saved presets!");
 
@@ -170,7 +174,7 @@ LowerThird.prototype.buildDOM = function(){
 	*/
 
 	fieldset_lowerthird.append(switch_lowerthird, inputText_name,inputText_tagline,inputColor,inputFile_logo,inputSelectFlag);
-	fieldset_clock.append(switch_clock, radio_left, radio_left_text, radio_right, radio_right_text);
+	fieldset_clock.append(switch_clock, radio_left, radio_left_text, radio_right, radio_right_text, '<br>', radio_hours24, radio_hours24_text, radio_hours12, radio_hours12_text);
 	fieldset_custom.append(switch_custom, inputFile_custom);
 	fieldset_mirrored.append(button_mirror);
 	fieldset_presets.append(inputText_preset, button_save,presetlist);
